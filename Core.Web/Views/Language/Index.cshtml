@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "LanguageList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <select id="selServiceList"></select>&nbsp;&nbsp;
+            <input type="text" id="txtKeyword" placeholder="Search Keyword" />
+            <button id="btnSearch" value="Search">Search</button>
+        </div>
+        <div class="panel-body">
+            <div>
+                <button id="btnCreateLink" style="float:right; display:none">Create</button>
+            </div>
+            <p>&nbsp;</p>
+            <div>
+                <table id="languageContainer" style="width:100%;"><tr><td>&nbsp;</td></tr></table>
+                <div id="languagePager"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var language = new Language({
+        btnSearch: "#btnSearch",
+        selServiceList: "#selServiceList",
+        txtKeyword: "#txtKeyword",
+        btnCreateLink: "#btnCreateLink",
+        languageContainer: "#languageContainer"
+    });
+    language.init();
+</script>
